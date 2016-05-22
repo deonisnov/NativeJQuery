@@ -10,7 +10,3 @@ else if( typeof define === 'function' && define.amd ) {
         return $;
     });
 }
-// Browser global
-else {
-    window.$ = $;
-}

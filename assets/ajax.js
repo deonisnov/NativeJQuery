@@ -1,27 +1,19 @@
-// TODO: DRY
+$.x = new XMLHttpRequest();
+$.x.withCredentials = true;
+$.x.onreadystatechange = function () {
+    $.xcb($.x.responseText);
+}
+
 $.get = function (url, callback) {
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.withCredentials = true;
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4) {
-            callback(xmlhttp.responseText);
-        }
-    }
-    xmlhttp.open("GET", url);
-    xmlhttp.send();
+    $.xcb = callback;
+    $.x.open("GET", url);
+    $.x.send();
 }
 
 $.post = function (url, data, callback, async) {
     if (async === undefined) async = true;
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4) {
-            callback(xmlhttp.responseText)
-        }
-    };
-    xmlhttp.open("POST", url, async);
-    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xmlhttp.withCredentials = true;
+
+    $.xcb = callback;
 
     var body = [];
     for(k in data){
@@ -33,5 +25,7 @@ $.post = function (url, data, callback, async) {
     }
     body = body.join('&');
 
-    xmlhttp.send(body)
+    $.x.open("POST", url, async);
+    $.x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    $.x.send(body)
 }

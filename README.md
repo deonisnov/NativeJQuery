@@ -30,3 +30,4 @@ myInput.parents('form') // node: <form/>
 ```
 npm i --save native-jquery
 ```
+<script src="native-jquery.js"></script>

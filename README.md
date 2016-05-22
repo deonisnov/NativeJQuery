@@ -25,6 +25,9 @@ $('.superContainer').on('click', '.item',function () { /**/ });
 
 myNode.find('.myClass') // nodeList
 myInput.parents('form') // node: <form/>
+
+$.get(url, callback);
+$.post(url, data,callback);
 ```
 ## Install
 ```

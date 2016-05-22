@@ -5,5 +5,6 @@
     "./assets/node.on.js",
     "./assets/node.parents.js",
     "./assets/nodeList.on.js",
+    "./assets/ajax.js"
   ]
 }

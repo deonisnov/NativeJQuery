@@ -1,16 +1,25 @@
 {
   "name": "native-jquery",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "native jquery",
+  "main": "./public/native-jquery.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "seokirill",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-browserify": "^0.5.1",
+    "gulp-module-builder": "^1.0.2",
     "gulp-uglify": "^1.5.3"
-  }
+  },
+  "repository": {
+    "url": "https://github.com/seokirill/NativeJQuery"
+  },
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/seokirill/NativeJQuery/issues"
+  },
+  "homepage": "https://github.com/seokirill/NativeJQuery#readme"
+
 }

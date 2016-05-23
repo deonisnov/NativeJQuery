@@ -1,3 +1,4 @@
+NodeList.prototype.__proto__ = Array.prototype;
 var $ = document.querySelectorAll.bind(document);
 
 // commonjs

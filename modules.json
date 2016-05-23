@@ -1,10 +1,10 @@
 {
   "native-jquery": [
     "./assets/core.js",
-    "./assets/node.find.js",
-    "./assets/node.on.js",
-    "./assets/node.parents.js",
-    "./assets/nodeList.on.js",
-    "./assets/ajax.js"
+    "./assets/find.js",
+    "./assets/on.js",
+    "./assets/parents.js",
+    "./assets/ajax.js",
+    "./assets/append.js"
   ]
 }

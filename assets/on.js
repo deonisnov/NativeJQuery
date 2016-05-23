@@ -15,3 +15,12 @@ Node.prototype.on = window.on = function (name, fn_sub, fn) {
         this.addEventListener(name, fn_sub);
     }
 }
+
+// NodeList
+NodeList.prototype.on = function () {
+    // TODO: .map()?
+    var args = arguments;
+    this.forEach(function (elem) {
+        elem.on.apply(elem, args);
+    });
+}

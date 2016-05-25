@@ -1,4 +1,6 @@
-Node.prototype.addClass = function(className){
-	this.classList.add(className);
+NodeList.prototype.addClass = function(className){
+	this.forEach(function (elem) {
+		elem.addClass(className);
+	})
 	return this;
 }

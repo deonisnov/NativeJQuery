@@ -7,7 +7,6 @@
     "./assets/ajax.js",
     "./assets/append.js",
     "./assets/camelcase.js",
-    "./assets/snake_case.js",
-    "./assets/classlist.js"
+    "./assets/snake_case.js"
   ]
 }

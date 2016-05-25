@@ -5,6 +5,7 @@
     "./assets/on.js",
     "./assets/parents.js",
     "./assets/ajax.js",
-    "./assets/append.js"
+    "./assets/append.js",
+    "./assets/camelcase.js"
   ]
 }

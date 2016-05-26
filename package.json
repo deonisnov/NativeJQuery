@@ -1,6 +1,6 @@
 {
   "name": "native-jquery",
-  "version": "1.0.42",
+  "version": "1.0.43",
   "description": "native jquery",
   "main": "./public/native-jquery.js",
   "scripts": {

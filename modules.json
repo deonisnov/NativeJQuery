@@ -1,12 +1,5 @@
 {
   "native-jquery": [
-    "./assets/core.js",
-    "./assets/find.js",
-    "./assets/on.js",
-    "./assets/parents.js",
-    "./assets/ajax.js",
-    "./assets/append.js",
-    "./assets/camelcase.js",
-    "./assets/snake_case.js"
+    "./assets/*"
   ]
 }

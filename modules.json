@@ -5,7 +5,13 @@
     "./assets/on.js",
     "./assets/parents.js",
     "./assets/ajax.js",
+<<<<<<< HEAD
     "./assets/append.js"
+=======
+    "./assets/append.js",
+    "./assets/camelcase.js",
+    "./assets/snake_case.js",
+>>>>>>> origin/classListt
     "./assets/classlist.js"
   ]
 }

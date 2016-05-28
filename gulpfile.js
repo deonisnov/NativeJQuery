@@ -21,9 +21,7 @@ gulp.task('build:deploy', function() {
 gulp.task('build:test', function() {
     gulp.src('./modules-test.json')
         .pipe(builder())
-// Connect
-gulp.task('connect', function() {
-    .pipe(gulp.dest('./public/'));
+        .pipe(gulp.dest('./public/'));
 
     gulp.src('README.md')
         .pipe(markdown())
@@ -35,7 +33,9 @@ gulp.task('connect', function() {
 });
 
 
-connect.server({
+// Connect
+gulp.task('connect', function() {
+    connect.server({
         root: './public',
         livereload: true,
         port: 8888,

@@ -37,4 +37,3 @@ $.post(url, data,callback);
 ```
 npm i --save native-jquery
 ```
-<script src="native-jquery.js"></script>

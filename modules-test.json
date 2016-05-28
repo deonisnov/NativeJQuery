@@ -1,0 +1,19 @@
+{
+  "native-jquery": [
+    "./assets/core.js",
+    "./assets/*.js"
+  ],
+  "jquery-1.12.3": [
+    "./test/jquery-1.12.3.min.js"
+  ],
+  "jquery-2.2.4": [
+    "./test/jquery-2.2.4.min.js"
+  ],
+  "jquery-3": [
+    "./test/jquery-3-compat.min.js"
+  ],
+  "test": [
+    "./node_modules/systemjs/dist/system.js",
+    "./test/test.js"
+  ]
+}

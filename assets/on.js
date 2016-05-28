@@ -14,7 +14,8 @@ Node.prototype.on = window.on = function (name, fn_sub, fn) {
     }else{
         this.addEventListener(name, fn_sub);
     }
-}
+    return this;
+};
 
 // NodeList
 NodeList.prototype.on = function () {
@@ -23,4 +24,5 @@ NodeList.prototype.on = function () {
     this.forEach(function (elem) {
         elem.on.apply(elem, args);
     });
-}
+    return this;
+};

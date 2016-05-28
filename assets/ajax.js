@@ -7,6 +7,9 @@ $.x.onreadystatechange = function () {
 $.get = function (url, callback) {
     $.xcb = callback;
     $.x.open("GET", url);
+    $.x.setRequestHeader('Accept-Encoding', 'gzip, deflate, sdch');
+    $.x.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
     $.x.send();
 }
 
@@ -27,5 +30,8 @@ $.post = function (url, data, callback, async) {
 
     $.x.open("POST", url, async);
     $.x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    $.x.setRequestHeader('Accept-Encoding', 'gzip, deflate, sdch');
+    $.x.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
     $.x.send(body)
-}
+};

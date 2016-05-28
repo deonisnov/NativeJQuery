@@ -8,23 +8,34 @@ var markdown = require('gulp-markdown');
 var livereload = require('gulp-livereload');
 var connect = require('gulp-connect');
 var rename = require("gulp-rename");
+var inject = require('gulp-inject-string');
 
-gulp.task('build', function() {
+gulp.task('build:deploy', function() {
     gulp.src('./modules.json')
         .pipe(builder())
         .pipe(uglify())
         .pipe(jscrush())
         .pipe(gulp.dest('./public/'));
+});
+
+gulp.task('build:test', function() {
+    gulp.src('./modules-test.json')
+        .pipe(builder())
+// Connect
+gulp.task('connect', function() {
+    .pipe(gulp.dest('./public/'));
 
     gulp.src('README.md')
         .pipe(markdown())
         .pipe(rename('index.html'))
+        .pipe(
+            inject.append('<script src="test.js"></script>')
+        )
         .pipe(gulp.dest('./public/'));
 });
 
-// Connect
-gulp.task('connect', function() {
-    connect.server({
+
+connect.server({
         root: './public',
         livereload: true,
         port: 8888,
@@ -34,8 +45,10 @@ gulp.task('connect', function() {
 
 // Watch
 gulp.task('watch',function(){
-    gulp.watch("./assets/*.js", ["build"]);
-    gulp.watch("./modules.json", ["build"]);
+    gulp.watch("./assets/*.js", ["build:test"]);
+    gulp.watch("./test/*.js", ["build:test"]);
+    gulp.watch("./modules.json", ["build:test"]);
 });
 
-gulp.task('default', ["build", "connect", "watch"]);
+gulp.task('default', ["build:test", "connect", "watch"]);
+gulp.task('deploy', ["build:deploy"]);

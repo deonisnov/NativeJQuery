@@ -14,7 +14,7 @@
 1 406 Б
 
 ## Usage
-Точно так же, как JQuery
+Точно так же, как JQuery!
 ```javascript
 var $ = require('native-jquery'); // AMD / CommonJS / Global
 

@@ -11,7 +11,7 @@
 Скоро вы сможете полнотью перейти на nativeJQuery не переписывая код, достаточно будет просто подключить эту библиотеку вместо той, которую используете.
 
 ### Размер
-1 406 Б
+1 841 Б
 
 ## Usage
 Точно так же, как JQuery!
@@ -26,6 +26,7 @@ $('.superContainer').on('click', '.item',function () { /**/ });
 $('div').find('.myClass') // nodeList
 $('a').parents('form') // node: <form/>
 $('a').append()
+$('a').prepend()
 $('a').each()
 $('a').attr()
 $('a').addClass()

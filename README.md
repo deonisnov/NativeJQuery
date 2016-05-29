@@ -41,7 +41,20 @@ $.get(url, callback);
 $.post(url, data,callback);
 
 ```
+## Фишки, которые не доступны обычному JQuery
+
+Привычные методы JQuery можно вызывать на нодах:
+```javascript
+document.getElementById(Id).addClass()
+document.getElementsByTagName(p).each()
+```
+Кроме того:
+```javascript
+$('input[type=checkbox]').val()
+````
+теперь возвращает true или false
 ## Install
 ```
 npm i --save native-jquery
 ```
+

@@ -1,6 +1,6 @@
 Node.prototype.on = window.on = function (name, fn_sub, fn) {
     if(!!fn){
-        this.addEventListener(name, function (e) {
+        var a = function (e) {
             var selector = fn_sub;
             var target = e.target;
             while (target != this) {
@@ -10,7 +10,9 @@ Node.prototype.on = window.on = function (name, fn_sub, fn) {
                 }
                 target = target.parentNode;
             }
-        });
+        };
+
+        this.addEventListener(name, a);
     }else{
         this.addEventListener(name, fn_sub);
     }
@@ -21,8 +23,10 @@ Node.prototype.on = window.on = function (name, fn_sub, fn) {
 NodeList.prototype.on = function () {
     // TODO: .map()?
     var args = arguments;
-    this.forEach(function (elem) {
+    var a = function (elem) {
         elem.on.apply(elem, args);
-    });
+    };
+    
+    this.forEach(a);
     return this;
 };

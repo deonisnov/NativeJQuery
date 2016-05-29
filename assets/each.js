@@ -1,6 +1,8 @@
 NodeList.prototype.each = function (callback) {
-    this.forEach(function (node) {
+    var a = function (node) {
         callback.apply(node)
-    })
+    };
+
+    this.forEach(a);
     return this;
 };

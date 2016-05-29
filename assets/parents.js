@@ -1,3 +1,4 @@
+// TODO: while{}?
 Node.prototype.parents = function(selector){
     var parent = this.parentNode;
     if (!parent) return null;

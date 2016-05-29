@@ -6,8 +6,9 @@ Node.prototype.attr = function (attrName, value) {
 
 NodeList.prototype.attr = function (attrName, value) {
     if(typeof value == 'undefined') return this[0].getAttribute(attrName);
-    this.forEach(function (elem) {
+    var a = function (elem) {
         elem.attr(attrName, value);
-    });
+    };
+    this.forEach(a);
     return this;
 }

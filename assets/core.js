@@ -8,7 +8,9 @@ $ = function (arg) {
         div.innerHTML = arg;
         return div.childNodes;
     }
-    return document.querySelectorAll(arg);
+    var retn = document.querySelectorAll(arg);
+    if(retn.length < 2) return retn[0];
+    return retn;
 }
 
 // commonjs

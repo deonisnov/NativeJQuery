@@ -6,8 +6,11 @@ Node.prototype.text = function (v) {
 
 NodeList.prototype.text = function (v) {
     if(typeof v == 'undefined') return this[0].innerText;
-    this.forEach(function (elem) {
+
+    var a = function (elem) {
         elem.text(v);
-    })
+    };
+    
+    this.forEach(a);
     return this;
 };

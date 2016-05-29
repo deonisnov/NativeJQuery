@@ -14,18 +14,16 @@ var testings = [
 var iter = 5;
 window.test = function (testFoo, clear) {
     window.results = {};
-    window.results.print = function () {
-        this.i = iter;
-
+    window.test.print = function () {
         if(!this.done){
-            for(k in this){
-                for(testName in this[k]){
-                    this[k][testName] /= this.i;
+            for(k in window.results){
+                for(testName in window.results[k]){
+                    window.results[k][testName] /= iter;
                 }
             }
         }
         this.done = true;
-        console.table(this);
+        console.table(window.results);
     }
 
     function xx(x) {
@@ -51,29 +49,30 @@ window.test = function (testFoo, clear) {
             .forEach(function (item) {
                 System.import(item + '.js')
                     .then(function ($) {
-                        if(!results[item])results[item] = {};
+                        if(!window.results[item])window.results[item] = {};
 
                         ////////////
                         if(!!clear)$('body').html('');
                         var res = xx(100)(testFoo)
 
-                        if(!results[item][res.testname]) results[item][res.testname] = 0;
-                        results[item][res.testname] += res.time;
+                        if(!window.results[item][res.testname]) window.results[item][res.testname] = 0;
+                        window.results[item][res.testname] += res.time;
 
 
                         ////////////
                         if(!!clear)$('body').html('');
                         var res = xx(1000)(testFoo)
 
-                        if(!results[item][res.testname]) results[item][res.testname] = 0;
-                        results[item][res.testname] += res.time;
+                        if(!window.results[item][res.testname]) window.results[item][res.testname] = 0;
+                        window.results[item][res.testname] += res.time;
 
                         ////////////
                         if(!!clear)$('body').html('');
                         var res = xx(10000)(testFoo)
 
-                        if(!results[item][res.testname]) results[item][res.testname] = 0;
-                        results[item][res.testname] += res.time;
+                        if(!window.results[item][res.testname]) window.results[item][res.testname] = 0;
+                        window.results[item][res.testname] += res.time;
+
                     }).then(function () {
                         console.log('test', item, 'done');
                     });

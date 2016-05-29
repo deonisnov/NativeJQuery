@@ -55,13 +55,14 @@ $('input[type=checkbox]').val()
 ````
 теперь возвращает true или false
 
-А также: 
-скорость обработки скриптов NativeJQuery в разы выше, чем у JQuery
+##Производительность: 
+Скорость выполнения скриптов NativeJQuery в разы выше, чем у JQuery
 (Смотрите сравнительные таблицы тестов)
-![Image alt](https://github.com/timkovik/nativejquery/raw/descriptions/test/testsimage/1.png)
-![Image alt](https://github.com/timkovik/nativejquery/raw/descriptions/test/testsimage/2.png)
-![Image alt](https://github.com/timkovik/nativejquery/raw/descriptions/test/testsimage/3.png)
-![Image alt](https://github.com/timkovik/nativejquery/raw/descriptions/test/testsimage/4.png)
+
+![Image alt](https://github.com/seokirill/nativejquery/raw/descriptions/test/testsimage/1.png)
+![Image alt](https://github.com/seokirill/nativejquery/raw/descriptions/test/testsimage/2.png)
+![Image alt](https://github.com/seokirill/nativejquery/raw/descriptions/test/testsimage/3.png)
+![Image alt](https://github.com/seokirill/nativejquery/raw/descriptions/test/testsimage/4.png)
 
 Наши тесты не претендуют на истинность в последней инстанции, мы ищем объективности. Вы можете протестировать скорость выполнения любым доступным Вам способом.
 ## Install

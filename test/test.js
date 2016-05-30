@@ -1,3 +1,4 @@
+// TODO: юзать нормальные тесты
 System
     .import('native-jquery.js')
     .then(function ($) {
@@ -6,9 +7,9 @@ System
 
 var testings = [
     // 'jquery-1.12.3',
+    'native-jquery',
     'jquery-2.2.4',
-    'jquery-3',
-    'native-jquery'
+    'jquery-3'
 ];
 
 var iter = 5;

@@ -53,3 +53,4 @@ gulp.task('watch',function(){
 
 gulp.task('default', ["build:test", "connect", "watch"]);
 gulp.task('deploy', ["build:deploy"]);
+gulp.task('start', ["connect", "watch"]);

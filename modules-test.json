@@ -4,9 +4,6 @@
     "./assets/*.js",
     "./assets/String/*.js"
   ],
-  "jquery-1.12.3": [
-    "./test/jquery-1.12.3.min.js"
-  ],
   "jquery-2.2.4": [
     "./test/jquery-2.2.4.min.js"
   ],
@@ -16,5 +13,8 @@
   "test": [
     "./node_modules/systemjs/dist/system.js",
     "./test/test.js"
+  ],
+  "select2":[
+    "./node_modules/select2/dist/js/select2.js"
   ]
 }

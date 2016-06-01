@@ -16,7 +16,7 @@ $ = function (arg) {
     var retn = document.querySelectorAll(arg);
     // if(retn.length < 2) return retn[0];
     return retn;
-};
+}; 
 
 // Плагины
 $.fn = Array.prototype;
@@ -33,4 +33,6 @@ else if( typeof define === 'function' && define.amd ) {
     define(function () {
         return $;
     });
+}else{
+    window.$ = $;
 }

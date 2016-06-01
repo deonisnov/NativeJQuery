@@ -2,7 +2,8 @@
 System
     .import('native-jquery.js')
     .then(function ($) {
-        window.$ = $;
+        if(!!$.$) window.$ = $.$;
+        else window.$ = $;
     })
 
 var testings = [

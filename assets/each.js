@@ -6,3 +6,8 @@ NodeList.prototype.each = function (callback) {
     this.forEach(a);
     return this;
 };
+
+Node.prototype.each = function (callback) {
+    callback.apply(this);
+    return this;
+};

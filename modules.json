@@ -1,6 +1,7 @@
 {
   "native-jquery": [
     "./assets/core.js",
-    "./assets/*.js"
+    "./assets/*.js",
+    "./assets/String/*.js"
   ]
 }

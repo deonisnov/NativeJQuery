@@ -1,7 +1,8 @@
 {
   "native-jquery": [
     "./assets/core.js",
-    "./assets/*.js"
+    "./assets/*.js",
+    "./assets/String/*.js"
   ],
   "jquery-1.12.3": [
     "./test/jquery-1.12.3.min.js"

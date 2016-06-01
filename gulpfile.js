@@ -47,7 +47,8 @@ gulp.task('connect', function() {
 gulp.task('watch',function(){
     gulp.watch("./assets/*.js", ["build:test"]);
     gulp.watch("./test/*.js", ["build:test"]);
-    gulp.watch("./modules.json", ["build:test"]);
+    gulp.watch("./modules-test.json", ["build:test"]);
+    gulp.watch("./README.md", ["build:test"]);
 });
 
 gulp.task('default', ["build:test", "connect", "watch"]);

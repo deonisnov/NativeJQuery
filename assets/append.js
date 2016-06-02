@@ -1,6 +1,6 @@
 Node.prototype.append = function (arg) {
     if (typeof arg == 'object'){
-        if(!arg.length) this.insertAdjacentElement('beforeEnd', arg);
+        if(!arg.length && !arg.matches('selector')) this.insertAdjacentElement('beforeEnd', arg);
         else {
             var self = this;
             var a = function (elem) {

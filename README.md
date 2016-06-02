@@ -69,10 +69,3 @@ $('input[type=checkbox]').val()
 ```
 npm i --save native-jquery
 ```
-
-<div>
-    <select>
-        <option value="1">11</option>
-        <option value="2">2</option>
-    </select>
-</div>

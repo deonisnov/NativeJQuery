@@ -13,8 +13,5 @@
   "test": [
     "./node_modules/systemjs/dist/system.js",
     "./test/test.js"
-  ],
-  "select2":[
-    "./node_modules/select2/dist/js/select2.js"
   ]
 }

@@ -1,11 +1,15 @@
 // TODO: переписать с bind
 Node.prototype.find = function(selector){
     if(selector.indexOf(':selected') + 1){
-        var mbSelect;
+        var mbSelect = this;
         var selectors = selector.split(':selected');
+
         if (!!selectors[0]) mbSelect = this.querySelectorAll(selectors[0]);
         else {
-            if(!this.matches('option')) mbSelect = this.parentNode;
+            var iso = this.matches('option');
+            if(iso){
+                mbSelect = this.parentNode;
+            }
             else if(!this.matches('select')) mbSelect = this.find('select');
             else mbSelect = this;
         }
@@ -15,6 +19,6 @@ Node.prototype.find = function(selector){
 };
 
 NodeList.prototype.find = function(selector){
-    if(!this.length) return $('<div/>');
+    if(!this.length) return $.empty();
     return this[0].find(selector);
 };

@@ -10,6 +10,13 @@ var connect = require('gulp-connect');
 var rename = require("gulp-rename");
 var inject = require('gulp-inject-string');
 
+var testData = '';
+
+
+var jquery = '<script src="native-jquery.js"></script>';
+// var jquery = '<script src="jquery-3.js"></script>';
+
+
 gulp.task('build:deploy', function() {
     gulp.src('./modules.json')
         .pipe(builder())
@@ -23,12 +30,16 @@ gulp.task('build:test', function() {
         .pipe(builder())
         .pipe(gulp.dest('./public/'));
 
+    gulp.src('./node_modules/select2/dist/css/select2.css')
+        .pipe(gulp.dest('./public/'));
+
+
     gulp.src('README.md')
         .pipe(markdown())
         .pipe(rename('index.html'))
-        .pipe(
-            inject.append('<script src="test.js"></script>')
-        )
+        .pipe(inject.append(jquery))
+        .pipe(inject.append(testData))
+        .pipe(inject.append('<script src="test.js"></script>'))
         .pipe(gulp.dest('./public/'));
 });
 

@@ -1,9 +1,7 @@
 $ = function (arg) {
-    // миграция
-    if(typeof arg == 'object' || typeof arg == 'function') {
-        var div = document.createElement('div');
-        div.append(arg);
-        return div.childNodes;
+    // Deprecated
+    if(typeof arg == 'object') {
+        return arg;
     }
 
     // Создание на лету
@@ -11,17 +9,24 @@ $ = function (arg) {
         // TODO: outerHTMl?
         var div = document.createElement('div');
         div.innerHTML = arg;
-        return div.childNodes;
+        return div.querySelectorAll(':scope > *');
     }
     var retn = document.querySelectorAll(arg);
+    // Deprecated
     // if(retn.length < 2) return retn[0];
     return retn;
-}; 
+};
+
+// Deprecated
+$.empty = function () {
+    return $('none');
+};
 
 // Плагины
 $.fn = Array.prototype;
 NodeList.prototype.__proto__ = $.fn;
 Node.prototype.__proto__.__proto__ = $.fn;
+// Deprecated
 window.jQuery = $;
 
 // commonjs

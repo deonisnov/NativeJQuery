@@ -4,10 +4,8 @@ Node.prototype.is = function (selector) {
 
 NodeList.prototype.is = function (selector) {
     var a = function (elem) {
-        return elem.matches(selector);
+        return elem.is(selector);
     };
 
     return this.some(a);
 };
-
-// TODO: Если аргумент нода: содержит ли набор ноду

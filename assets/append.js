@@ -1,23 +1,10 @@
 Node.prototype.append = function (arg) {
-    if (typeof arg == 'object'){
-        if(!arg.length && !arg.matches('selector')) this.insertAdjacentElement('beforeEnd', arg);
-        else {
-            var self = this;
-            var a = function (elem) {
-                self.insertAdjacentElement('beforeEnd', elem);
-            };
-            
-            arg.forEach(a)
-        }
-    } else {
-        this.insertAdjacentHTML('beforeEnd', arg);
-    }
-    return this;
+    return this.insert('beforeEnd', arg);
 };
 
 NodeList.prototype.append = function (arg) {
     var a = function (elem) {
-        Node.prototype.append.call(elem, arg);
+        elem.append(arg);
     };
     this.forEach(a);
     return this;

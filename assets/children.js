@@ -1,4 +1,4 @@
-// TODO: ???
+// Deprecated ??
 HTMLElement.prototype.children = function (selector) {
     selector = selector || '*';
     return this.querySelectorAll(':scope > ' + selector);

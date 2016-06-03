@@ -13,8 +13,5 @@
   "test": [
     "./node_modules/systemjs/dist/system.js",
     "./test/test.js"
-  ],
-  "jgrowl":[
-    "./node_modules/jgrowl/jquery.jgrowl.js"
   ]
 }

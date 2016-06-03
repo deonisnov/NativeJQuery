@@ -5,7 +5,7 @@ Node.prototype.html = function (v) {
 };
 
 NodeList.prototype.html = function (v) {
-    if(typeof v == 'undefined') return this[0].innerHTML;
+    if(typeof v == 'undefined') return this[0].html();
 
     var a = function (elem) {
         elem.html(v);

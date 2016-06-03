@@ -1,5 +1,5 @@
 # NativeJQuery
-Хотите пользоваться удобствами JQuery, но при этом думаете о производительности и у вас нет необходимости поддержки IE6?
+Хотите пользоваться удобствами JQuery, но при этом думаете о производительности и у вас нет необходимости поддержки старых IE?
 Тогда эта библиотека для вас.
 Делает то же самое, что JQuery и почти так же.
 
@@ -11,14 +11,14 @@
 Скоро вы сможете полнотью перейти на nativeJQuery не переписывая код, достаточно будет просто подключить эту библиотеку вместо той, которую используете.
 
 ### Размер
-1 841 Б
+2 772 Б
 
 ## Usage
 Точно так же, как JQuery!
 ```javascript
 var $ = require('native-jquery'); // AMD / CommonJS / Global
 
-$('.superClass') // nodelist
+$('.superClass:last :parent') // nodelist
 
 $('.superClass').on('click', function () { /**/ });
 $('.superContainer').on('click', '.item',function () { /**/ });
@@ -27,6 +27,9 @@ $('div').find('.myClass') // nodeList
 $('a').parents('form') // node: <form/>
 $('a').append()
 $('a').prepend()
+$('div').before()
+$('div').after()
+$('div').insert()
 $('a').each()
 $('a').attr()
 $('a').addClass()
@@ -41,6 +44,15 @@ $('input, select').val()
 $.get(url, callback);
 $.post(url, data,callback);
 
+$.extend()
+$('div').data()
+$('div').css()
+$('div').is('.cool');
+$('div').trigger('superEvent')
+$('div')..after()
+$('div')..children()
+
+$.fn
 ```
 ## Фишки, которые не доступны обычному JQuery
 

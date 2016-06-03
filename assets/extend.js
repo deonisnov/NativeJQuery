@@ -1,3 +1,4 @@
+// Object.prototype
 $.extend = function (o) {
     if(typeof o != 'object') o = {};
 
@@ -6,5 +7,6 @@ $.extend = function (o) {
             o[propName] = arguments[i][propName];
         }
     }
+    
     return o;
 };

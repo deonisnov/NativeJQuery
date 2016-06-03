@@ -45,6 +45,5 @@ Node.prototype.find = function(selector){
 };
 
 NodeList.prototype.find = function(selector){
-    if(!this.length) return $.empty();
     return this[0].find(selector);
 };

@@ -3,7 +3,5 @@ Node.prototype.parent = function () {
 };
 
 NodeList.prototype.parent = function () {
-    // Deprecated
-    if(!this.length) return $.empty();
-    return this[0].parentNode;
+    return this[0].parent();
 };

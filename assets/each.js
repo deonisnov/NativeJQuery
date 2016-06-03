@@ -7,6 +7,7 @@ NodeList.prototype.each = function (callback) {
     return this;
 };
 
+// Надо ли?
 Node.prototype.each = function (callback) {
     callback.apply(this);
     return this;

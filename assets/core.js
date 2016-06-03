@@ -6,12 +6,13 @@ $ = function (arg) {
 
     // Создание на лету
     if(arg.indexOf('<') + 1){
-        // TODO: outerHTMl?
         var div = document.createElement('div');
         div.innerHTML = arg;
         return div.querySelectorAll(':scope > *');
     }
-    var retn = document.querySelectorAll(arg);
+
+    // Поиск по селектору
+    var retn = document.find(arg);
     // Deprecated
     // if(retn.length < 2) return retn[0];
     return retn;

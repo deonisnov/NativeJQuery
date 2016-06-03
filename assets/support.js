@@ -1,0 +1,3 @@
+$.support = {
+    opacity: true
+};

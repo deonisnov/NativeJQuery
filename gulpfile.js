@@ -10,12 +10,10 @@ var connect = require('gulp-connect');
 var rename = require("gulp-rename");
 var inject = require('gulp-inject-string');
 
-var testData = '';
-
-
 var jquery = '<script src="native-jquery.js"></script>';
 // var jquery = '<script src="jquery-3.js"></script>';
 
+var testData = '';
 
 gulp.task('build:deploy', function() {
     gulp.src('./modules.json')

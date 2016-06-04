@@ -3,5 +3,5 @@ Node.prototype.parent = function () {
 };
 
 NodeList.prototype.parent = function () {
-    return this[0].parent();
+    return this[0].parentNode;
 };

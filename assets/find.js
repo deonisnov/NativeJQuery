@@ -1,27 +1,42 @@
+$.reservedSelectors = [
+    ':parent',
+    ':last'
+];
+
 Node.prototype.find = function(selector){
     var retn = this;
+    var selectors, k;
 
-    if(selector.indexOf(':parent') + 1) {
-        var selectors = selector.split(':parent');
-        for(var k = 0; k < selectors.length; k++){
-            if(!!selectors[k]) retn = retn.find(selectors[k]);
-            if(k != (selectors.length - 1))  retn = retn.parent();
-        }
-        return retn;
-    }else{
-        if(selector.indexOf(':last') + 1) {
-            var selectors = selector.split(':last');
-            for(var k = 0; k < selectors.length; k++){
-                if(!!selectors[k]) retn = retn.find(selectors[k]);
-                if(k != (selectors.length - 1))  retn = retn[retn.length - 1];
+    if(selector.indexOf(':') + 1) {
+        selectors = selector.split(/(:[^\s:]*)/ig);
+        for(k = 0; k < selectors.length; k++){
+            // Если не пустой
+            if(!!selectors[k]){
+                // Если зарезервированный селектор
+                if($.reservedSelectors.indexOf(selectors[k])){
+                    retn = retn[selectors[k].slice(1)]();
+                }// Иначе просто ищем
+                else{
+                    retn = retn.querySelectorAll(selectors[k]);
+                }
             }
-            return retn;
-        }else{
-            retn = this.querySelectorAll(selector);
         }
+    }else{
+        retn = retn.querySelectorAll(selector);
     }
 
     return retn;
+
+
+
+
+
+
+
+
+
+
+
 
 
 

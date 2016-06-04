@@ -21,13 +21,7 @@ Node.prototype.on = window.on = function (name, fn_sub, fn) {
 
 // NodeList
 NodeList.prototype.on = function () {
-    // TODO: .map()?
-    var args = arguments;
-    var a = function (elem) {
-        elem.on.apply(elem, args);
-    };
-
-    for (var i = this.length - 1; i >= 0; i--) a(this[i]);
+    for (var i = this.length - 1; i >= 0; i--) this[i].on(arguments);
 
     return this;
 };

@@ -5,7 +5,7 @@ Node.prototype.data = function(dataName, value){
     return this;
 };
 
-NodeList.prototype.data = function(dataName, value){
+NodeList.prototype.data = function(){
     if(arguments.length < 2) return this[0].data(arguments);
 
     for (var i = this.length - 1; i >= 0; i--) this[i].data(arguments);

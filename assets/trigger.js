@@ -9,11 +9,7 @@ Node.prototype.trigger = function (eventName) {
 };
 
 NodeList.prototype.trigger = function (eventName) {
-    var a = function (elem) {
-        elem.trigger(eventName);
-    };
-
-    for (var i = this.length - 1; i >= 0; i--) a(this[i]);
+    for (var i = this.length - 1; i >= 0; i--) this[i].trigger(eventName);
 
     return this;
 };

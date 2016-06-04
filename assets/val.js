@@ -10,11 +10,7 @@ Node.prototype.val = function (v) {
 NodeList.prototype.val = function (v) {
     if(typeof v == 'undefined') return this[0].val();
 
-    var a = function (elem) {
-        elem.val(v);
-    };
-
-    for (var i = this.length - 1; i >= 0; i--) a(this[i]);
+    for (var i = this.length - 1; i >= 0; i--) this[i].value = v;
     
     return this;
 };

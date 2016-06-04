@@ -2,11 +2,12 @@
 // for-- ~120
 // for++ ~130
 // while ~120
+// for-of ~170
+// iterator ~180
 // forEach ~250
 // map ~400
 // for-in  ~1300
-// for-of ~170
-// iterator ~180
+
 
 // x 1000 000
 // for-- ~970
@@ -14,12 +15,9 @@
 // while ~1150
 
 /*
-* appendChild
-* insertAdjacentElement
-* innerHTML
-* */
-
-
+* appendChild ~1600
+* insertAdjacentElement ~1800
+*/
 
 // TODO: юзать нормальные тесты
 var testings = [

@@ -1,6 +1,4 @@
-Node.prototype.is = function (selector) {
-    return this.matches(selector);
-};
+Node.prototype.is = HTMLElement.prototype.matches;
 
 NodeList.prototype.is = function (selector) {
     var a = function (elem) {

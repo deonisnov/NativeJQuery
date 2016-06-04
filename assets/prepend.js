@@ -3,11 +3,7 @@ Node.prototype.prepend = function (arg) {
 };
 
 NodeList.prototype.prepend = function (arg) {
-    var a = function (elem) {
-        elem.prepend(arg);
-    };
-
-    for (var i = this.length - 1; i >= 0; i--) a(this[i]);
+    for (var i = this.length - 1; i >= 0; i--) this[i].insert('afterBegin', arg);
 
     return this;
 };

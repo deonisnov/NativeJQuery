@@ -1,8 +1,7 @@
-// TODO: while{}?
 Node.prototype.parents = function(selector){
     var parent = this.parentNode;
-    if (!parent || !parent.matches) return null;
-    if (parent.matches(selector)) return parent;
+    if (!parent || !parent.matches) return undefined;
+    if (parent.is(selector)) return parent;
     return parent.parents(selector);
 };
 

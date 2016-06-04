@@ -3,9 +3,7 @@ Node.prototype.before = function (arg) {
 };
 
 NodeList.prototype.before = function (arg) {
-    var a = function (elem) {
-        elem.before(arg);
-    };
-    this.forEach(a);
+    for (var i = this.length - 1; i >= 0; i--) this[i].insert('beforeBegin', arg);
+
     return this;
 };

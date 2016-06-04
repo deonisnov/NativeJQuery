@@ -1,20 +1,15 @@
 Node.prototype.attr = function (attrName, value) {
-    if(typeof value == 'undefined') {
-        if(this.hasOwnProperty('getAttribute')) return this.getAttribute(attrName);
-        return null;
-    }
+    if(typeof value == 'undefined') return this.getAttribute(attrName);
     this.setAttribute(attrName,value);
     return this;
 };
 
 NodeList.prototype.attr = function (attrName, value) {
     if(typeof value == 'undefined') {
-        if(!this.length) return '';
         return this[0].getAttribute(attrName);
     }
-    var a = function (elem) {
-        elem.attr(attrName, value);
-    };
-    this.forEach(a);
+
+    for (var i = this.length - 1; i >= 0; i--) this[i].setAttribute(attrName,value);
+
     return this;
 };

@@ -1,65 +1,64 @@
-// addClass()
-Node.prototype.addClass = function(classlist){
-	var self = this;
-	var a = function (className) {
-		self.classList.add(className);
-	};
+Node.prototype.class = function (action, classlist) {
+	if(classlist.indexOf(' ') + 1){
+		classlist = classlist.split(' ');
+		this.classList[action].apply(this, classlist);
+	}else{
+		this.classList[action](classlist);
+	}
 
-	// TODO: потестить с проверкой .indexOf(' ')
-	classlist
-		.split(' ')
-		.forEach(a);
 	return this;
 };
 
-NodeList.prototype.addClass = function(classList){
-	var a = function (elem) {
-		elem.addClass(classList);
-	};
+// addClass()
+Node.prototype.addClass = function(classlist){
+	return this.class('add', classlist);
+};
 
-	this.forEach(a);
+NodeList.prototype.addClass = function(classList){
+	for (var i = this.length - 1; i >= 0; i--) this[i].class('add', classList);
 	return this;
 };
 
 // removeClass()
 Node.prototype.removeClass = function(classlist){
-	var self = this;
-	var a = function (className) {
-		self.classList.remove(className);
-	};
-
-	classlist
-		.split(' ')
-		.forEach(a);
-	return this;
+	return this.class('remove', classlist);
 };
 
 NodeList.prototype.removeClass = function(classList){
-	var a = function (elem) {
-		elem.removeClass(classList);
-	};
-	this.forEach(a);
+	for (var i = this.length - 1; i >= 0; i--) this[i].class('remove', classList);
 	return this;
 };
 
 // toggleClass()
 Node.prototype.toggleClass = function(classlist){
-	var self = this;
-	var a = function (className) {
-		self.classList.toggle(className);
-	};
-
-	classlist
-		.split(' ')
-		.forEach(a);
-	return this;
+	return this.class('toggle', classlist);
 };
 
 NodeList.prototype.toggleClass = function(classList){
-	var a = function (elem) {
-		elem.toggleClass(classList);
+	for (var i = this.length - 1; i >= 0; i--) this[i].class('toggle', classList);
+	return this;
+};
+
+// hasClass()
+Node.prototype.hasClass = function(classlist){
+	if(classlist.indexOf(' ') + 1){
+		classlist = classlist.split(' ');
+
+		var self = this;
+		var a = function (classItem) {
+			return self.classList.contains(classItem);
+		};
+
+		return classlist.every(a);
+	}else{
+		return this.classList.contains(classlist);
+	}
+};
+
+NodeList.prototype.hasClass = function(classList){
+	var a = function (el) {
+		return el.hasClass(classList);
 	};
 
-	this.forEach(a);
-	return this;
+	this.every(a);
 };

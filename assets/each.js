@@ -3,7 +3,8 @@ NodeList.prototype.each = function (callback) {
         callback.apply(node)
     };
 
-    this.forEach(a);
+    for (var i = this.length - 1; i >= 0; i--) a(this[i]);
+
     return this;
 };
 

@@ -1,9 +1,8 @@
 $ = function (arg) {
     // Создание на лету
     if(arg.indexOf('<') + 1){
-        var div = document.createElement('div');
-        div.innerHTML = arg;
-        return div.querySelectorAll(':scope > *');
+        $.div.innerHTML = arg;
+        return  $.div.querySelectorAll(':scope > *');
     }
 
     // Поиск по селектору
@@ -12,10 +11,7 @@ $ = function (arg) {
     return retn;
 };
 
-// Плагины
-$.fn = Array.prototype;
-NodeList.prototype.__proto__ = $.fn;
-Node.prototype.__proto__.__proto__ = $.fn;
+$.div = document.createElement('div');
 
 // commonjs
 if( typeof exports === 'object' )  {

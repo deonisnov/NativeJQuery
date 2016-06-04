@@ -8,10 +8,7 @@ Node.prototype.data = function(dataName, value){
 NodeList.prototype.data = function(dataName, value){
     if(arguments.length < 2) return this[0].data(arguments);
 
-    var a = function (elem) {
-        elem.data(arguments);
-    };
+    for (var i = this.length - 1; i >= 0; i--) this[i].data(arguments);
 
-    this.forEach(a);
     return this;
 };

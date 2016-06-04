@@ -6,6 +6,8 @@ NodeList.prototype.prepend = function (arg) {
     var a = function (elem) {
         elem.prepend(arg);
     };
-    this.forEach(a);
+
+    for (var i = this.length - 1; i >= 0; i--) a(this[i]);
+
     return this;
 };

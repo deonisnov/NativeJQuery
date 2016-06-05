@@ -1,6 +1,6 @@
 Node.prototype.data = function(dataName, value){
-    if(typeof dataName == 'undefined') return this.dataset;
-    if(typeof value == 'undefined') return this.dataset[dataName.toCamelCase()];
+    if(dataName === undefined) return this.dataset;
+    if(value === undefined) return this.dataset[dataName.toCamelCase()];
     this.dataset[dataName.toCamelCase()] = value;
     return this;
 };

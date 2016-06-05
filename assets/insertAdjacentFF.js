@@ -1,4 +1,4 @@
-if (typeof HTMLElement != "undefined" && !HTMLElement.prototype.insertAdjacentElement) {
+if (HTMLElement != undefined && !HTMLElement.prototype.insertAdjacentElement) {
     HTMLElement.prototype.insertAdjacentElement = function(where, parsedNode) {
         switch (where) {
             case 'beforeBegin':

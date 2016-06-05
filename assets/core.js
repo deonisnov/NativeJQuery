@@ -1,4 +1,10 @@
 $ = function (arg) {
+    if(typeof arg == 'function'){
+        if (document.readyState == 'complete') arg();
+        else document.on("DOMContentLoaded", arg);
+        return;
+    }
+
     // Создание на лету
     if(arg.indexOf('<') + 1){
         $.div.innerHTML = arg;

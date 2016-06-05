@@ -14,7 +14,7 @@ var inject = require('gulp-inject-string');
 var test = '<script src="test.js"></script>';
 var jquery = '<script src="native-jquery.js"></script>';
 // var jquery = '<script src="jquery-3.js"></script>';
-
+var testdata = '<select><option>1</option><option>2</option></select>';
 
 gulp.task('page', function() {
     gulp.src('README.md')
@@ -22,6 +22,7 @@ gulp.task('page', function() {
         .pipe(rename('index.html'))
         .pipe(inject.append(jquery))
         .pipe(inject.append(test))
+        .pipe(inject.append(testdata))
         .pipe(gulp.dest('./public/'))
         .pipe(connect.reload());
 });

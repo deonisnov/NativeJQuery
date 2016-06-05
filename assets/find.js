@@ -1,7 +1,4 @@
-$.reservedSelectors = [
-    ':parent',
-    ':last'
-];
+$.reservedSelectors = ':parent|:last';
 
 Node.prototype.find = function(selector){
     var retn = this;
@@ -10,8 +7,11 @@ Node.prototype.find = function(selector){
     if(selector.indexOf(':') + 1) {
         selectors = selector
             .replace( /:selected/g, ':checked')
-            .split(/(:[^checked][^\s:]*)/ig);
+            .split(new RegExp('(' + $.reservedSelectors + ')','ig'));
         for(k = 0; k < selectors.length; k++){
+            if (retn === undefined
+                || (retn.__proto__ === NodeList.prototype && !retn.length)
+            ) return retn;
             // Если не пустой
             if(!!selectors[k]){
                 // Если зарезервированный селектор

@@ -15,8 +15,9 @@ Node.prototype.addClass = function(classlist){
 };
 
 NodeList.prototype.addClass = function(classList){
-	for (var i = this.length - 1; i >= 0; i--) this[i].class('add', classList);
-	return this;
+	return this.each(function () {
+		this.class('add', classList);
+	});
 };
 
 // removeClass()
@@ -25,8 +26,9 @@ Node.prototype.removeClass = function(classlist){
 };
 
 NodeList.prototype.removeClass = function(classList){
-	for (var i = this.length - 1; i >= 0; i--) this[i].class('remove', classList);
-	return this;
+	return this.each(function () {
+		this.class('remove', classList);
+	});
 };
 
 // toggleClass()
@@ -35,8 +37,9 @@ Node.prototype.toggleClass = function(classlist){
 };
 
 NodeList.prototype.toggleClass = function(classList){
-	for (var i = this.length - 1; i >= 0; i--) this[i].class('toggle', classList);
-	return this;
+	return this.each(function () {
+		this.class('toggle', classList);
+	});
 };
 
 // hasClass()

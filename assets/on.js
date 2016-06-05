@@ -4,7 +4,7 @@ Node.prototype.on = window.on = function (name, fn_sub, fn) {
             var selector = fn_sub;
             var target = e.target;
             while (target != this) {
-                if (target.matches(selector)) {
+                if (target.is(selector)) {
                     fn.call(target, e);
                     return;
                 }
@@ -21,7 +21,7 @@ Node.prototype.on = window.on = function (name, fn_sub, fn) {
 
 // NodeList
 NodeList.prototype.on = function () {
-    for (var i = this.length - 1; i >= 0; i--) this[i].on(arguments);
-
-    return this;
+    return this.each(function () {
+        this.on(arguments);
+    });
 };

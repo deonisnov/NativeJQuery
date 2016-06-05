@@ -9,3 +9,15 @@ Node.prototype.insert = function (where, second){
     }
     return this;
 };
+
+NodeList.prototype.insert = function (where, second){
+    if (typeof arg == 'string') {
+        this.each(function () {
+            this.insert(where, second);
+        });
+    }else{
+        this[0].insert(where, second);
+    }
+
+    return this;
+};

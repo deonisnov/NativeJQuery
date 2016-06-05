@@ -7,7 +7,7 @@ Node.prototype.text = function (v) {
 NodeList.prototype.text = function (v) {
     if(typeof v == 'undefined') return this[0].innerText;
 
-    for (var i = this.length - 1; i >= 0; i--) this[i].innerText = v;
-
-    return this;
+    return this.each(function () {
+        this.innerText = v;
+    });
 };

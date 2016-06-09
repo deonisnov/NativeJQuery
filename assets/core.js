@@ -13,11 +13,12 @@ $ = function (arg) {
 
     // Поиск по селектору
     var retn = document.find(arg);
-    if(retn.__proto__ === NodeList.prototype && retn.length < 2) return retn[0];
+    // if(retn.__proto__ === NodeList.prototype && retn.length < 2) return retn[0];
     return retn;
 };
 
 $.div = document.createElement('div');
+window.JQuery = $;
 
 // commonjs
 if( typeof exports === 'object' )  {

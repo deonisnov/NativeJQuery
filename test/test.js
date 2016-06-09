@@ -1,24 +1,3 @@
-// x 100 000
-// for-- ~120
-// for++ ~130
-// while ~120
-// for-of ~170
-// iterator ~180
-// forEach ~250
-// map ~400
-// for-in  ~1300
-
-
-// x 1000 000
-// for-- ~970
-// for++ ~1150
-// while ~1150
-
-/*
-* appendChild ~1600
-* insertAdjacentElement ~1800
-*/
-
 // TODO: юзать нормальные тесты
 var testings = [
     'native-jquery',

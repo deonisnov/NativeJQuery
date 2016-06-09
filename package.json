@@ -9,6 +9,7 @@
   "author": "seokirill",
   "license": "ISC",
   "devDependencies": {
+    "blissfuljs": "^1.0.2",
     "gulp": "^3.9.1",
     "gulp-connect": "^4.0.0",
     "gulp-inject-string": "^1.1.0",

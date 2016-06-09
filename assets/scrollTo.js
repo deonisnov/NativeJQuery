@@ -1,4 +1,8 @@
 Node.prototype.scrollTo = function (pos, duration) {
+    if(typeof pos == 'string'){
+        var node = $(pos);
+        pos = node.scrollTop || node[0].scrollTop;
+    } 
     var self = this;
     duration = duration || 1000;
     var S = pos - this.scrollTop;

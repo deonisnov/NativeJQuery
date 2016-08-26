@@ -1,7 +1,10 @@
 {
-  "native-jquery": [
-    "./assets/core.js",
-    "./assets/*.js",
-    "./assets/String/*.js"
-  ]
+	"native-jquery": [
+		"./assets/core.js",
+		"./assets/*.js",
+		"./assets/String/*.js"
+	],
+	"ajax": [
+		"./assets/ajax.js"
+	]
 }

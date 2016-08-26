@@ -46,24 +46,24 @@ gulp.task('watch:test',function(){
 gulp.task('default', ["js:test", "page", "connect", "watch:test"]);
 
 
-// Deploy
-gulp.task('js:deploy', function() {
+// production
+gulp.task('js:production', function() {
     gulp.src('./modules.json')
         .pipe(builder())
         .pipe(uglify())
-        .pipe(jscrush())
-        .pipe(gulp.dest('./public/'))
+        // .pipe(jscrush())
+        .pipe(gulp.dest('./'))
         .pipe(connect.reload());
 });
 
-gulp.task('watch:deploy',function(){
-    gulp.watch("./assets/**/*.js", ["js:deploy"]);
-    gulp.watch("./test/*.js", ["js:deploy"]);
-    gulp.watch("./modules.json", ["js:deploy"]);
+gulp.task('watch:production',function(){
+    gulp.watch("./assets/**/*.js", ["js:production"]);
+    gulp.watch("./test/*.js", ["js:production"]);
+    gulp.watch("./modules.json", ["js:production"]);
     gulp.watch("./README.md", ["page"]);
 });
 
-gulp.task('deploy', ["js:deploy", "page", "connect", "watch:deploy"]);
+gulp.task('production', ["js:production", "page", "connect", "watch:production"]);
 
 
 // Connect
